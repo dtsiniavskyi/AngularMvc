@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <badge *ngFor="let badge of badges" [count]="badge.count" [icon]="badge.icon" [caption]="badge.caption" [color]="badge.color"></badge>
+        </div>        
+    </div>
+    
+    <div class="col-lg-12">
+        <area-chart></area-chart>
+    </div>
+    
+    <div class="col-lg-8">
+        <bar-chart></bar-chart>
+    </div>
+    
+    <div class="col-lg-4">
+        <donut-chart></donut-chart>
+    </div>
+</div>

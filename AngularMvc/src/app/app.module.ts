@@ -13,6 +13,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DataComponent } from './components/data/data.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BadgeComponent } from './components/dashboard/badge/badge.component';
+import { AreaChartComponent } from './components/dashboard/charts/area-chart/area-chart.component';
+import { BarChartComponent } from './components/dashboard/charts/bar-chart/bar-chart.component';
+import { DonutChartComponent } from './components/dashboard/charts/donut-chart/donut-chart.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { CounterComponent } from './components/counter/counter.component';
     HomeComponent,
     NavbarComponent,
     DataComponent,
-    CounterComponent
+    CounterComponent,
+    DashboardComponent,
+    BadgeComponent,
+    AreaChartComponent,
+    BarChartComponent,
+    DonutChartComponent
   ],
   imports: [
     BrowserModule,
