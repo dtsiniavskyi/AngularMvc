@@ -5,6 +5,8 @@ declare var Morris: any;
     selector: 'area-chart',
     templateUrl: './area-chart.component.html'
 })
+
+// TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
 export class AreaChartComponent implements OnInit {
 
     data:any[];

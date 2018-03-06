@@ -5,6 +5,8 @@ declare var Morris: any;
     selector: 'bar-chart',
     templateUrl: './bar-chart.component.html'
 })
+
+// TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
 export class BarChartComponent implements OnInit {
 
     table: {

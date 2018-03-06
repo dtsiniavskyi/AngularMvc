@@ -5,6 +5,8 @@ declare var Morris: any;
     selector: 'donut-chart',
     templateUrl: './donut-chart.component.html'
 })
+
+// TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
 export class DonutChartComponent implements OnInit {
 
     data: {
