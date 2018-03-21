@@ -1,21 +1,30 @@
-﻿using System.IO;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
+﻿using AngularMvc.Auth;
 using AngularMvc.Data;
-using Microsoft.Extensions.Configuration;
 using AutoMapper;
-using System.Net;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using AngularMvc.Auth;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace AngularMvc
 {
+    // TODO: Try to make Startup partial and move all configure service methods there and just call here
     public class Startup
     {
+        // TODO: Get this from somewhere secure, possibly configuration !!!
+        private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH";
+        private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
+
         public IConfiguration _configuration { get; }
 
         // Inject project configuration
@@ -29,13 +38,67 @@ namespace AngularMvc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Database
             // Add Database Context
             // TODO: Extract to external extension method .AddApplicationDbContext()
             var connetctionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connetctionString,
                 b => b.MigrationsAssembly("AngularMvc")));
+            #endregion
 
+            #region JWT
+            // JWT wire up
+            services.AddSingleton<IJwtFactory, JwtFactory>();
+
+            // Get options from app settings
+            // TODO: Extract to external extension method .AddJWT()
+            var jwtAppSettingOptions = _configuration.GetSection(nameof(JwtIssuerOptions));
+
+            // Configure JwtIssuerOptions
+            services.Configure<JwtIssuerOptions>(options =>
+            {
+                options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
+                options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
+                options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+            });
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)],
+
+                ValidateAudience = true,
+                ValidAudience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)],
+
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = _signingKey,
+
+                RequireExpirationTime = false,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero
+            };
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            }).AddJwtBearer(configureOptions =>
+            {
+                configureOptions.ClaimsIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
+                configureOptions.TokenValidationParameters = tokenValidationParameters;
+                configureOptions.SaveToken = true;
+            });
+
+            // api user claim policy
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiUser", policy => policy.RequireClaim(JwtClaimTypes.Rol, JwtClaims.ApiAccess));
+            });
+            #endregion
+            
+            #region Identity
             // Add Identity 
             // TODO: Extract to external extension method .AddIdentity()
             var builder = services.AddIdentityCore<ApplicationUser>(o =>
@@ -49,8 +112,8 @@ namespace AngularMvc
             });
             builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
             builder.AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-
-
+            #endregion
+            
             services.AddAutoMapper();
             services.AddMvc();
         }
@@ -59,6 +122,12 @@ namespace AngularMvc
         // Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // TODO: Add development configuration
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             // TODO: Implement better Error Handling
             // TODO: Extract implementations to external files
             app.UseExceptionHandler(builder =>

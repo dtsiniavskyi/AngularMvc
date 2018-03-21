@@ -1,5 +1,6 @@
 ﻿namespace AngularMvc.Registration
 {
+    // TODO: Add Fluent Validations
     public class RegistrationViewModel
     {
         public string Email { get; set; }
