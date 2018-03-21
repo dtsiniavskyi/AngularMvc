@@ -33,7 +33,7 @@ namespace AngularMvc.Auth
          {
                  new Claim(JwtRegisteredClaimNames.Sub, userName),
                  new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
-                 new Claim(JwtRegisteredClaimNames.Iat, _jwtOptions.IssuedAt.ToUnixEpochDate().ToString(), ClaimValueTypes.Integer64),
+                 new Claim(JwtRegisteredClaimNames.Iat, _jwtOptions.IssuedAt.ToUnixTimeStamp().ToString(), ClaimValueTypes.Integer64),
 
                  identity.FindFirst(JwtClaimTypes.Rol),
                  identity.FindFirst(JwtClaimTypes.Id)

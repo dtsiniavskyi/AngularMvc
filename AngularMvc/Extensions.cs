@@ -5,6 +5,7 @@ using System;
 
 namespace AngularMvc
 {
+    // TODO: Move extensions to a folder
     public static class Extensions
     {
         public static ModelStateDictionary AddErrors(this ModelStateDictionary modelState, IdentityResult identityResult)
@@ -28,12 +29,16 @@ namespace AngularMvc
             response.Headers.Add("access-control-expose-headers", "Application-Error");
         }
 
+        // TODO: Find a way to extrtac all such methods to external libraries or use existing third party ones
         /// <returns>Date converted to seconds since Unix epoch (Jan 1, 1970, midnight UTC).</returns>
-        public static long ToUnixEpochDate(this DateTime dateTime)
+        public static long ToUnixTimeStamp(this DateTime dateTime)
         {
-            return (long)Math.Round((dateTime.ToUniversalTime() -
-                               new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero))
-                              .TotalSeconds);
+            var offset = new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
+            var universalTime = dateTime.ToUniversalTime();
+
+            var delta = Math.Round((universalTime - offset).TotalSeconds);
+
+            return (long)delta;
         }
     }
 }
