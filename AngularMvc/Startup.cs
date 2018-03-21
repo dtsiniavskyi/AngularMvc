@@ -5,6 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using AngularMvc.Data;
 using Microsoft.Extensions.Configuration;
+using AutoMapper;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using AngularMvc.Auth;
+using Microsoft.AspNetCore.Identity;
 
 namespace AngularMvc
 {
@@ -12,6 +18,7 @@ namespace AngularMvc
     {
         public IConfiguration _configuration { get; }
 
+        // Inject project configuration
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -22,11 +29,29 @@ namespace AngularMvc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connetcionString = _configuration.GetConnectionString("DefaultConnection");
+            // Add Database Context
+            // TODO: Extract to external extension method .AddApplicationDbContext()
+            var connetctionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connetcionString,
+                options.UseSqlServer(connetctionString,
                 b => b.MigrationsAssembly("AngularMvc")));
 
+            // Add Identity 
+            // TODO: Extract to external extension method .AddIdentity()
+            var builder = services.AddIdentityCore<ApplicationUser>(o =>
+            {
+                // Configure Identity options
+                o.Password.RequireDigit = false;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 6;
+            });
+            builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
+            builder.AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+
+            services.AddAutoMapper();
             services.AddMvc();
         }
 
@@ -34,6 +59,25 @@ namespace AngularMvc
         // Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // TODO: Implement better Error Handling
+            // TODO: Extract implementations to external files
+            app.UseExceptionHandler(builder =>
+                {
+                    builder.Run(async context =>
+                        {
+                            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                            context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+
+                            var error = context.Features.Get<IExceptionHandlerFeature>();
+                            if (error != null)
+                            {
+                                context.Response.AddApplicationError(error.Error.Message);
+                                await context.Response.WriteAsync(error.Error.Message).ConfigureAwait(false);
+                            }
+                        });
+                });
+
+
             // Redirect any non-API calls to the Angular application
             // so our application can handle the routing
             app.Use(async (context, next) => {

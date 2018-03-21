@@ -5,7 +5,7 @@
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup>    
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
