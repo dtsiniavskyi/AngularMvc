@@ -10,6 +10,8 @@ namespace AngularMvc.Auth
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
+        // TODO: Add another abstraction level against UserManager
+        // so it can be replaced with non identity implementation
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IJwtFactory _jwtFactory;
         private readonly JwtIssuerOptions _jwtOptions;

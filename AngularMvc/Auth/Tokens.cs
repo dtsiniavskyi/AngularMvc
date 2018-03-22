@@ -19,7 +19,8 @@ namespace AngularMvc.Auth
                 expires_in = (int)jwtOptions.ValidFor.TotalSeconds
             };
 
-            return JsonConvert.SerializeObject(response, serializerSettings);
+            var json = JsonConvert.SerializeObject(response, serializerSettings);
+            return json;
         }
     }
 }
