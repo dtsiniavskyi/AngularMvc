@@ -26,7 +26,7 @@ namespace AngularMvc.Registration
         public async Task<IActionResult> Post([FromBody]RegistrationViewModel model)
         {
             if (!ModelState.IsValid)            
-                return BadRequest(ModelState);            
+                return BadRequest(ModelState);
 
             var userIdentity = _mapper.Map<ApplicationUser>(model);
 

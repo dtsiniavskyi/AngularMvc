@@ -29,9 +29,8 @@ namespace AngularMvc.Auth
         [HttpPost("login")]
         public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
         {
-            if (!ModelState.IsValid)            
-                return BadRequest(ModelState);
-            
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);            
 
             var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
             if (identity == null)            

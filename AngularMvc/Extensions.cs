@@ -37,7 +37,6 @@ namespace AngularMvc
             var universalTime = dateTime.ToUniversalTime();
 
             var delta = Math.Round((universalTime - offset).TotalSeconds);
-
             return (long)delta;
         }
     }
