@@ -11,6 +11,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularASPNETCore2WebApiAut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefaultAspNetCoreWebApp", "Samples\DefaultAspNetCoreWebApp\DefaultAspNetCoreWebApp.csproj", "{7D56B24B-A3B0-4F8D-921F-0180920CD951}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F82C37A6-7738-4BB3-930C-76FCDDDBC1F8}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SB-Admin-BS4-Angular-5", "Templates\SB-Admin-BS4-Angular-5\", "{0CDDE888-A6E9-4F72-B74C-6E558B59E355}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64226"
+		Debug.AspNetCompiler.PhysicalPath = "Templates\SB-Admin-BS4-Angular-5\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64226\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64226"
+		Release.AspNetCompiler.PhysicalPath = "Templates\SB-Admin-BS4-Angular-5\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64226\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64226"
+		SlnRelativePath = "Templates\SB-Admin-BS4-Angular-5\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +52,10 @@ Global
 		{7D56B24B-A3B0-4F8D-921F-0180920CD951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D56B24B-A3B0-4F8D-921F-0180920CD951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D56B24B-A3B0-4F8D-921F-0180920CD951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CDDE888-A6E9-4F72-B74C-6E558B59E355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDDE888-A6E9-4F72-B74C-6E558B59E355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDDE888-A6E9-4F72-B74C-6E558B59E355}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDDE888-A6E9-4F72-B74C-6E558B59E355}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +63,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{938EEF71-054B-4896-9153-EA89DD18D704} = {A847D2A8-15FF-49ED-B4FB-8942E1761648}
 		{7D56B24B-A3B0-4F8D-921F-0180920CD951} = {A847D2A8-15FF-49ED-B4FB-8942E1761648}
+		{0CDDE888-A6E9-4F72-B74C-6E558B59E355} = {F82C37A6-7738-4BB3-930C-76FCDDDBC1F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FC43DB-3324-4FF2-B471-C0115435C23C}
