@@ -31,6 +31,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SB Admin", "Templates\SB Ad
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "45362"
+		SlnRelativePath = "Templates\SB Admin\"
 	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SB Admin BS4 Angular5", "Templates\SB Admin BS4 Angular5\", "{8531E16E-C8AD-4AF3-9AEE-D3894C18AC5F}"
@@ -51,6 +52,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SB Admin BS4 Angular5", "Te
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "45578"
+		SlnRelativePath = "Templates\SB Admin BS4 Angular5\"
 	EndProjectSection
 EndProject
 Global

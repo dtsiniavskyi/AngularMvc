@@ -48,11 +48,12 @@ namespace AngularCore
             #endregion
 
             #region JWT
+            // TODO: Extract to external extension method .AddJWT()
+
             // JWT wire up
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
-            // Get options from app settings
-            // TODO: Extract to external extension method .AddJWT()
+            // Get options from app settings            
             var jwtAppSettingOptions = _configuration.GetSection(nameof(JwtIssuerOptions));
 
             // Configure JwtIssuerOptions
@@ -63,6 +64,7 @@ namespace AngularCore
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
             });
 
+            //  Configure JWT auth
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
@@ -95,9 +97,9 @@ namespace AngularCore
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(JwtClaimTypes.Rol, JwtClaims.ApiAccess));
-            });
+            });            
             #endregion
-            
+
             #region Identity
             // Add Identity 
             // TODO: Extract to external extension method .AddIdentity()
@@ -127,6 +129,8 @@ namespace AngularCore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
 
             // TODO: Implement better Error Handling
             // TODO: Extract implementations to external files
