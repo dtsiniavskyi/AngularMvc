@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AngularMvc": {
+    "AngularCore": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
