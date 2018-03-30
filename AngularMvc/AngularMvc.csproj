@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+    <AssemblyName>AngularCore</AssemblyName>
+    <RootNamespace>AngularCore</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>    
