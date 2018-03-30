@@ -1,11 +1,11 @@
-﻿using AngularMvc.Auth;
-using AngularMvc.Data;
+﻿using AngularCore.Auth;
+using AngularCore.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace AngularMvc.Registration
+namespace AngularCore.Registration
 {
     [Route("api/[controller]")]
     public class RegistrationController : Controller

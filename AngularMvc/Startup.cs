@@ -1,5 +1,5 @@
-﻿using AngularMvc.Auth;
-using AngularMvc.Data;
+﻿using AngularCore.Auth;
+using AngularCore.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -16,7 +16,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace AngularMvc
+namespace AngularCore
 {
     // TODO: Try to make Startup partial and move all configure service methods there and just call here
     public class Startup

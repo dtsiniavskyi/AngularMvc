@@ -1,8 +1,8 @@
-﻿using AngularMvc.Auth;
-using AngularMvc.Registration;
+﻿using AngularCore.Auth;
+using AngularCore.Registration;
 using AutoMapper;
 
-namespace AngularMvc.Mappings
+namespace AngularCore.Mappings
 {
     public class ViewModelToEntityMappingProfile : Profile
     {

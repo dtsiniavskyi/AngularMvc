@@ -1,4 +1,4 @@
-﻿namespace AngularMvc.Registration
+﻿namespace AngularCore.Registration
 {
     // TODO: Add Fluent Validations
     public class RegistrationViewModel

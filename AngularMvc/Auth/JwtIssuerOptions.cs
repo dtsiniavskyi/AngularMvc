@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     public class JwtIssuerOptions
     {

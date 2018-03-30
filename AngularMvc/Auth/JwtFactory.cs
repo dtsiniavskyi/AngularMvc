@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     public class JwtClaimTypes
     {

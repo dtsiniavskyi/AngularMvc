@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace AngularMvc.Migrations
+namespace AngularCore.Migrations
 {
     public partial class Init : Migration
     {

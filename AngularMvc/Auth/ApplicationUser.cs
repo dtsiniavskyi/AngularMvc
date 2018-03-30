@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     public class ApplicationUser : IdentityUser
     { 

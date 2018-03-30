@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 
-namespace AngularMvc
+namespace AngularCore
 {
     // TODO: Move extensions to a folder
     public static class Extensions

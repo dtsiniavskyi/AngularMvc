@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     public interface IJwtFactory
     {

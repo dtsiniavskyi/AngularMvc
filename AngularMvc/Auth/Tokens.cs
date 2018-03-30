@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     // TODO: Refactor, possibly move this method to IJwtFactory
     // TODO: This method should return only the token ... id and expires are the part of a payload

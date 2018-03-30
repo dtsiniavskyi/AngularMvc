@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace AngularMvc.Auth
+namespace AngularCore.Auth
 {
     [Route("api/[controller]")]
     public class AuthController : Controller

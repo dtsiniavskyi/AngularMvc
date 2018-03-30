@@ -1,4 +1,4 @@
-﻿namespace AngularMvc.Auth
+﻿namespace AngularCore.Auth
 {
     public class CredentialsViewModel
     {
