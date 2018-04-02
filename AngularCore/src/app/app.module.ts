@@ -16,16 +16,19 @@ import { CounterComponent } from './components/counter/counter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IconCardComponent } from './components/dashboard/icon-card/icon-card.component';
 
+import { ChartJsComponent } from './components/charts/chart-js/chart-js.component';
+import { MorrisJsComponent } from './components/charts/morris-js/morris-js.component';
+
 import { MorrisAreaChartComponent } from './components/charts/morris-js/area-chart/area-chart.component';
 import { MorrisBarChartComponent } from './components/charts/morris-js/bar-chart/bar-chart.component';
 import { MorrisDonutChartComponent } from './components/charts/morris-js/donut-chart/donut-chart.component';
 
-import { ChartsJsComponent } from './components/charts/charts-js/charts-js.component';
-import { MorrisJsComponent } from './components/charts/morris-js/morris-js.component';
+import { ChartJsAreaChartComponent } from './components/charts/chart-js/area-chart/area-chart.component';
+import { ChartJsBarChartComponent } from './components/charts/chart-js/bar-chart/bar-chart.component';
+import { ChartJsDonutChartComponent } from './components/charts/chart-js/donut-chart/donut-chart.component';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
-
 
 @NgModule({
   declarations: [
@@ -39,9 +42,12 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     MorrisAreaChartComponent,
     MorrisBarChartComponent,
     MorrisDonutChartComponent,
+    ChartJsAreaChartComponent,
+    ChartJsBarChartComponent,
+    ChartJsDonutChartComponent,
     FooterComponent,
     NavItemComponent,
-    ChartsJsComponent,
+    ChartJsComponent,
     MorrisJsComponent
   ],
   imports: [
