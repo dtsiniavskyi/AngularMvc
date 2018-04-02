@@ -9,6 +9,7 @@ declare var Morris: any;
 // TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
 export class DonutChartComponent implements OnInit {
 
+    // TODO: Fetch datat from the server or pass as an input
     data: {
       label: string;
       value: number;

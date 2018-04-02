@@ -12,6 +12,7 @@ export class AreaChartComponent implements OnInit {
     data:any[];
     
     ngOnInit() {
+      // TODO: Fetch datat from the server or pass as an input
       this.data = [
         {
           period: '2010 Q1',

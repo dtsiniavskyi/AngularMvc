@@ -7,8 +7,10 @@ declare var Morris: any;
 })
 
 // TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
+// TODO: Fetch datat from the server or pass as an input
 export class BarChartComponent implements OnInit {
 
+    // TODO: Fetch datat from the server or pass as an input
     table: {
       number: number;
       date: string;
