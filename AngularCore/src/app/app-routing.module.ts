@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DataComponent } from './components/data/data.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +19,11 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'charts/morris-js', component: MorrisJsComponent },
   { path: 'charts/chart-js', component: ChartJsComponent },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+
   { path: '**', redirectTo: 'home' }
 ];
 

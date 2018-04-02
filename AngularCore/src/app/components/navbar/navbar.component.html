@@ -31,7 +31,7 @@
       </li>
     </ul>
 
-    <!-- TODO: Uncomment and fix the issue when this arrow is not working --> 
+    <!-- TODO: Uncomment and fix the issue when this arrow is not working -->
     <!-- <ul class="navbar-nav sidenav-toggler">
       <li class="nav-item">
         <a class="nav-link text-center" id="sidenavToggler">
@@ -133,9 +133,22 @@
           </div>
         </form>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-          <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        <a class="nav-link" [routerLink]="['/login']">
+          <i class="fa fa-fw fa-sign-in"></i>Login
+        </a>
+        
+
+        <!-- <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <i class="fa fa-fw fa-sign-out"></i>Logout
+        </a> -->
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']">
+              Register
+            </a>
       </li>
     </ul>
   </div>

@@ -29,6 +29,9 @@ import { ChartJsPieChartComponent } from './components/charts/chart-js/pie-chart
 
 import { FooterComponent } from './components/footer/footer.component';
 import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 
 //import { ChartsModule } from 'ng2-charts';
 
@@ -50,7 +53,10 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     FooterComponent,
     NavItemComponent,
     ChartJsComponent,
-    MorrisJsComponent
+    MorrisJsComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
