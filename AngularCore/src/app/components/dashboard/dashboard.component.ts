@@ -13,9 +13,9 @@ export class DashboardComponent implements OnInit {
     }[] = []
 
     ngOnInit() {
-        this.badges.push({ count: 100, icon: 'fa-comments', caption: 'New Comments!', color: 'primary' });
-        this.badges.push({ count: 100, icon: 'fa-tasks', caption: 'New Tasks!', color: 'green' });
-        this.badges.push({ count: 100, icon: 'fa-shopping-cart', caption: 'New Orders!', color: 'yellow' });
-        this.badges.push({ count: 100, icon: 'fa-support', caption: 'Support Tickets!', color: 'red' });
+        this.badges.push({ count: 100, icon: 'comments', caption: 'New Comments!', color: 'primary' });
+        this.badges.push({ count: 100, icon: 'tasks', caption: 'New Tasks!', color: 'success' });
+        this.badges.push({ count: 100, icon: 'shopping-cart', caption: 'New Orders!', color: 'warning' });
+        this.badges.push({ count: 100, icon: 'support', caption: 'Support Tickets!', color: 'danger' });
     }
 }
