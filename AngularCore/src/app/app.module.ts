@@ -18,6 +18,7 @@ import { BadgeComponent } from './components/dashboard/badge/badge.component';
 import { AreaChartComponent } from './components/dashboard/charts/area-chart/area-chart.component';
 import { BarChartComponent } from './components/dashboard/charts/bar-chart/bar-chart.component';
 import { DonutChartComponent } from './components/dashboard/charts/donut-chart/donut-chart.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DonutChartComponent } from './components/dashboard/charts/donut-chart/d
     BadgeComponent,
     AreaChartComponent,
     BarChartComponent,
-    DonutChartComponent
+    DonutChartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

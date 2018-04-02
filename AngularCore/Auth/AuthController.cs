@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace AngularCore.Auth
 {
     [Route("api/[controller]")]
+    // TODO: Rename to LoginController
     public class AuthController : Controller
     {
         // TODO: Add another abstraction level against UserManager
