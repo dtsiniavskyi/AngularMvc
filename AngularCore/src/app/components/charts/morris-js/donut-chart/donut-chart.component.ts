@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 declare var Morris: any;
 
 @Component({
-    selector: 'app-moris-donut-chart',
+    selector: 'app-morris-donut-chart',
     templateUrl: './donut-chart.component.html'
 })
 
