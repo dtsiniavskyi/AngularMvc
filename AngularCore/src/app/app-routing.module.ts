@@ -1,3 +1,5 @@
+import { ChartsJsComponent } from './components/charts/charts-js/charts-js.component';
+import { MorrisJsComponent } from './components/charts/morris-js/morris-js.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'data', component: DataComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'charts/morris-js', component: MorrisJsComponent },
+  { path: 'charts/charts-js', component: ChartsJsComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
