@@ -30,6 +30,8 @@ import { ChartJsPieChartComponent } from './components/charts/chart-js/pie-chart
 import { FooterComponent } from './components/footer/footer.component';
 import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
 
+//import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,8 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //ChartsModule
   ],
   providers: [ValuesService],
   bootstrap: [AppComponent]
