@@ -14,7 +14,7 @@ import { DataComponent } from './components/data/data.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BadgeComponent } from './components/dashboard/badge/badge.component';
+import { IconCardComponent } from './components/dashboard/icon-card/icon-card.component';
 import { AreaChartComponent } from './components/dashboard/charts/area-chart/area-chart.component';
 import { BarChartComponent } from './components/dashboard/charts/bar-chart/bar-chart.component';
 import { DonutChartComponent } from './components/dashboard/charts/donut-chart/donut-chart.component';
@@ -30,7 +30,7 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     DataComponent,
     CounterComponent,
     DashboardComponent,
-    BadgeComponent,
+    IconCardComponent,
     AreaChartComponent,
     BarChartComponent,
     DonutChartComponent,
