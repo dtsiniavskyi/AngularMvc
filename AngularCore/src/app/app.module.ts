@@ -25,7 +25,7 @@ import { MorrisDonutChartComponent } from './components/charts/morris-js/donut-c
 
 import { ChartJsAreaChartComponent } from './components/charts/chart-js/area-chart/area-chart.component';
 import { ChartJsBarChartComponent } from './components/charts/chart-js/bar-chart/bar-chart.component';
-import { ChartJsDonutChartComponent } from './components/charts/chart-js/donut-chart/donut-chart.component';
+import { ChartJsPieChartComponent } from './components/charts/chart-js/pie-chart/pie-chart.component';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
@@ -44,7 +44,7 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     MorrisDonutChartComponent,
     ChartJsAreaChartComponent,
     ChartJsBarChartComponent,
-    ChartJsDonutChartComponent,
+    ChartJsPieChartComponent,
     FooterComponent,
     NavItemComponent,
     ChartJsComponent,
