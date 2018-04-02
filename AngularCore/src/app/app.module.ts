@@ -19,6 +19,7 @@ import { AreaChartComponent } from './components/dashboard/charts/area-chart/are
 import { BarChartComponent } from './components/dashboard/charts/bar-chart/bar-chart.component';
 import { DonutChartComponent } from './components/dashboard/charts/donut-chart/donut-chart.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavItemComponent } from './components/navbar/nav-item/nav-item.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AreaChartComponent,
     BarChartComponent,
     DonutChartComponent,
-    FooterComponent
+    FooterComponent,
+    NavItemComponent
   ],
   imports: [
     BrowserModule,

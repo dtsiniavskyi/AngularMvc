@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'badge',
+    selector: 'app-badge',
     templateUrl: './badge.component.html'
 })
 
@@ -11,10 +11,7 @@ export class BadgeComponent implements OnInit {
     @Input() caption: string = '';
     @Input() color: string = '';
 
-    constructor() {
-    }
+    constructor() { }
 
-    ngOnInit() {
-        console.log(this.icon);
-    }
+    ngOnInit() { }
 }
