@@ -31,19 +31,20 @@
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/jquery.easing/jquery.easing.min.js",
 
-        "../node_modules/popper.js/dist/umd/popper.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/popper.js/dist/umd/popper.js",        
 
-        "../node_modules/raphael/raphael.js",
-        "../node_modules/morris.js/morris.js",
         "../node_modules/chart.js/dist/Chart.min.js",
+        "../node_modules/raphael/raphael.js",
+        "../node_modules/morris.js/morris.js",        
 
         "../node_modules/datatables.net/js/jquery.dataTables.js",
         "../node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js",
 
-        "scripts/sb-admin.min.js",
-        "scripts/sb-admin-charts.min.js",
-        "scripts/sb-admin-datatables.min.js"
+        "scripts/sb-admin.js",
+        "scripts/sb-admin-datatables.js",
+        "scripts/sb-admin-charts.js"
+        
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
