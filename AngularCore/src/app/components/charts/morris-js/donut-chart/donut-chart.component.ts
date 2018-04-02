@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 declare var Morris: any;
 
 @Component({
-    selector: 'donut-chart',
+    selector: 'app-moris-donut-chart',
     templateUrl: './donut-chart.component.html'
 })
 
 // TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
-export class DonutChartComponent implements OnInit {
+export class MorrisDonutChartComponent implements OnInit {
 
     // TODO: Fetch datat from the server or pass as an input
     data: {

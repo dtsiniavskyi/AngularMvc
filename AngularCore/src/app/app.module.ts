@@ -16,9 +16,9 @@ import { CounterComponent } from './components/counter/counter.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IconCardComponent } from './components/dashboard/icon-card/icon-card.component';
 
-import { AreaChartComponent } from './components/charts/morris-js/area-chart/area-chart.component';
-import { BarChartComponent } from './components/charts/morris-js/bar-chart/bar-chart.component';
-import { DonutChartComponent } from './components/charts/morris-js/donut-chart/donut-chart.component';
+import { MorrisAreaChartComponent } from './components/charts/morris-js/area-chart/area-chart.component';
+import { MorrisBarChartComponent } from './components/charts/morris-js/bar-chart/bar-chart.component';
+import { MorrisDonutChartComponent } from './components/charts/morris-js/donut-chart/donut-chart.component';
 
 import { ChartsJsComponent } from './components/charts/charts-js/charts-js.component';
 import { MorrisJsComponent } from './components/charts/morris-js/morris-js.component';
@@ -36,9 +36,9 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
     CounterComponent,
     DashboardComponent,
     IconCardComponent,
-    AreaChartComponent,
-    BarChartComponent,
-    DonutChartComponent,
+    MorrisAreaChartComponent,
+    MorrisBarChartComponent,
+    MorrisDonutChartComponent,
     FooterComponent,
     NavItemComponent,
     ChartsJsComponent,

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 declare var Morris: any;
 
 @Component({
-    selector: 'bar-chart',
+    selector: 'app-moris-bar-chart',
     templateUrl: './bar-chart.component.html'
 })
 
 // TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
 // TODO: Fetch datat from the server or pass as an input
-export class BarChartComponent implements OnInit {
+export class MorrisBarChartComponent implements OnInit {
 
     // TODO: Fetch datat from the server or pass as an input
     table: {

@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 declare var Morris: any;
 
 @Component({
-    selector: 'area-chart',
+    selector: 'app-moris-area-chart',
     templateUrl: './area-chart.component.html'
 })
 
 // TODO: Use ng-morris-js at https://www.npmjs.com/package/ng-morris-js
-export class AreaChartComponent implements OnInit {
+export class MorrisAreaChartComponent implements OnInit {
 
     data:any[];
     
