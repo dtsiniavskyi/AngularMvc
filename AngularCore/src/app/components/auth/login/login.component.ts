@@ -9,6 +9,11 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  signIn(credentials){
+    alert(credentials.password);
   }
 
 }

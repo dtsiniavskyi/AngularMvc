@@ -3,7 +3,7 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
  
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions) {
 
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA';
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkbXl0cm8udHNpbmlhdnNreWlAZ21haWwuY29tIiwianRpIjoiYjRjYTJlOGUtMDM0YS00ODg3LThiY2YtMmVjNGEzOWZiMWQxIiwiaWF0IjoxNTIyNDM0MTY5LCJyb2wiOiJhcGlfYWNjZXNzIiwiaWQiOiJkM2Y5Y2JlYy0yNjk0LTRlYmQtOGE1MC03MWJiZWJkZWNmYTAiLCJuYmYiOjE1MjI0MzQxNjgsImV4cCI6MTUyMjQ0MTM2OCwiaXNzIjoiQW5ndWxhckNvcmVXZWJBcGkiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjM2MTg1LyJ9.VsiVoiUVlV2WQ9gyQ3vlnRi4TEhM3qSpVMmR8LG7Wmo';
 
     backend.connections.subscribe((connection: MockConnection) => {
       // We are using the setTimeout() function to simulate an asynchronous call 
