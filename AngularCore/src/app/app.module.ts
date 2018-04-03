@@ -34,6 +34,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
+import { AuthService } from './services/auth.service';
 
 //import { ChartsModule } from 'ng2-charts';
 
@@ -69,7 +70,7 @@ import { NotAuthorizedComponent } from './components/not-authorized/not-authoriz
     HttpClientModule,
     //ChartsModule
   ],
-  providers: [ValuesService],
+  providers: [ValuesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
