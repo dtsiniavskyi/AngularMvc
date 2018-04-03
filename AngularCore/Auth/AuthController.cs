@@ -31,7 +31,7 @@ namespace AngularCore.Auth
         public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);            
+                return BadRequest(ModelState);
 
             var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
             if (identity == null)            

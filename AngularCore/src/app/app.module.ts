@@ -36,6 +36,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 import { AuthService } from './services/auth.service';
 
+// TODO: Deprecated, need to remove!!!
+import { HttpModule } from '@angular/http';
+
 //import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -68,6 +71,10 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+
+    // TODO: Deprecated, need to remove
+    HttpModule,
+
     //ChartsModule
   ],
   providers: [ValuesService, AuthService],
