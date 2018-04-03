@@ -1,6 +1,7 @@
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ChartJsComponent } from './components/charts/chart-js/chart-js.component';
 import { MorrisJsComponent } from './components/charts/morris-js/morris-js.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
 
-  { path: '**', redirectTo: 'home' }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

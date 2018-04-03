@@ -32,6 +32,8 @@ import { NavItemComponent } from './components/navbar/nav-item/nav-item.componen
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 
 //import { ChartsModule } from 'ng2-charts';
 
@@ -56,7 +58,9 @@ import { ForgotPasswordComponent } from './components/auth/forgot-password/forgo
     MorrisJsComponent,
     LoginComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    NotFoundComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
