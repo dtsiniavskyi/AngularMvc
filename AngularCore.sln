@@ -55,6 +55,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SB Admin BS4 Angular5", "Te
 		SlnRelativePath = "Templates\SB Admin BS4 Angular5\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UdemyAuthDemo", "Samples\UdemyAuthDemo\", "{C2CB9CEC-A1B3-4574-A931-09151BC841AB}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_22035"
+		Debug.AspNetCompiler.PhysicalPath = "Samples\UdemyAuthDemo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22035\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_22035"
+		Release.AspNetCompiler.PhysicalPath = "Samples\UdemyAuthDemo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22035\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "22035"
+		SlnRelativePath = "Samples\UdemyAuthDemo\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +102,10 @@ Global
 		{8531E16E-C8AD-4AF3-9AEE-D3894C18AC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8531E16E-C8AD-4AF3-9AEE-D3894C18AC5F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{8531E16E-C8AD-4AF3-9AEE-D3894C18AC5F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C2CB9CEC-A1B3-4574-A931-09151BC841AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CB9CEC-A1B3-4574-A931-09151BC841AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CB9CEC-A1B3-4574-A931-09151BC841AB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CB9CEC-A1B3-4574-A931-09151BC841AB}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +115,7 @@ Global
 		{7D56B24B-A3B0-4F8D-921F-0180920CD951} = {A847D2A8-15FF-49ED-B4FB-8942E1761648}
 		{17902169-AA14-4042-AAC9-9651378DDCA3} = {F82C37A6-7738-4BB3-930C-76FCDDDBC1F8}
 		{8531E16E-C8AD-4AF3-9AEE-D3894C18AC5F} = {F82C37A6-7738-4BB3-930C-76FCDDDBC1F8}
+		{C2CB9CEC-A1B3-4574-A931-09151BC841AB} = {A847D2A8-15FF-49ED-B4FB-8942E1761648}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FC43DB-3324-4FF2-B471-C0115435C23C}
