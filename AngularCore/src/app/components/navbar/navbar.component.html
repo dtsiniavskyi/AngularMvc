@@ -7,12 +7,12 @@
   </button> -->
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav navbar-sidenav" id="accordion">
+    <ul *ngIf="auth.isLoggedIn()" class="navbar-nav navbar-sidenav" id="accordion">
 
-      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Home" [link]="['/home']" icon="home"></li>
-      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Counter" [link]="['/counter']" icon="dashboard"></li>
-      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Fetch data" [link]="['/data']" icon="list"></li>
-      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Dashboard" [link]="['/dashboard']" icon="dashboard"></li>
+      <li app-nav-item text="Home" [link]="['/home']" icon="home"></li>
+      <li app-nav-item text="Counter" [link]="['/counter']" icon="dashboard"></li>
+      <li app-nav-item text="Fetch data" [link]="['/data']" icon="list"></li>
+      <li app-nav-item text="Dashboard" [link]="['/dashboard']" icon="dashboard"></li>
 
       <li *ngIf="auth.isLoggedIn()" class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#accordion">
