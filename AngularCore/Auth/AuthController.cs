@@ -17,6 +17,7 @@ namespace AngularCore.Auth
         private readonly IJwtFactory _jwtFactory;
         private readonly JwtIssuerOptions _jwtOptions;
 
+        // TODO: Refactor, Implement Auth Servie, move all dependencies there
         public AuthController(UserManager<ApplicationUser> userManager, IJwtFactory jwtFactory, IOptions<JwtIssuerOptions> jwtOptions)
         {
             _userManager = userManager;

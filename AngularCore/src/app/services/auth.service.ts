@@ -12,6 +12,7 @@ export class AuthService {
   constructor(private _http: Http) {
     let token = localStorage.getItem('token');
     if (token) {
+      // TODO: Refactor, make jwt hepler a field, do not recreate the instance
       let jwt = new JwtHelper();
       this.currentUser = jwt.decodeToken(token);
     }
@@ -32,7 +33,7 @@ export class AuthService {
         if (res && res.auth_token) {
           localStorage.setItem('token', res.auth_token);
 
-          // TODO: Refactor, make jwt hepler a field
+          // TODO: Refactor, make jwt hepler a field, do not recreate the instance
           let jwt = new JwtHelper();
           this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
 

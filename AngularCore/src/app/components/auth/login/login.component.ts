@@ -7,7 +7,8 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-
+  
+  // TODO: Refactor, remove this flag
   invalidLogin: boolean;
 
   constructor(
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
         if (result)
           this.router.navigate(['/']);
         else
+          // TODO: Implement some better error handling, add error component or directive
           this.invalidLogin = true;
       });
   }
