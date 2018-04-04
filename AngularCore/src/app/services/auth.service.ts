@@ -50,10 +50,26 @@ export class AuthService {
     this.currentUser = null;
   }
 
+  // TODO: Investigate, no sure if this is considered a good practice to call isLoggedIn() method all the time, or only once when componenet loads
   isLoggedIn() {
     // TODO: Get rid of "probably"
     // This method automatically extracts and decodes the token from local storage ... probably ...
-    return tokenNotExpired('token');
+
+    // TODO: Refactor, make jwt hepler a field, do not recreate the instance
+    let jwtHelper = new JwtHelper();
+    let token = localStorage.getItem('token');
+
+    if(!token)
+      return false;
+
+    let expirationDate = jwtHelper.getTokenExpirationDate(token);
+    let isExpired = jwtHelper.isTokenExpired(token);
+
+    console.log("Expiration", expirationDate);
+    console.log("isExpired", isExpired);
+
+    //return tokenNotExpired('token');
+    return !isExpired;
   }
 
 }

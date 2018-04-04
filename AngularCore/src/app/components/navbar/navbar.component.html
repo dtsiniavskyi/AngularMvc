@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-  <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+  <a class="navbar-brand" [routerLink]="['/home']">AngularCore</a>
 
   <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,16 +7,15 @@
   </button> -->
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+    <ul class="navbar-nav navbar-sidenav" id="accordion">
 
-      <li app-nav-item text="Home" [link]="['/home']" icon="home"></li>
-      <li app-nav-item text="Counter" [link]="['/counter']" icon="dashboard"></li>
-      <li app-nav-item text="Fetch data" [link]="['/data']" icon="list"></li>
-      <li app-nav-item text="Dashboard" [link]="['/dashboard']" icon="dashboard"></li>
+      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Home" [link]="['/home']" icon="home"></li>
+      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Counter" [link]="['/counter']" icon="dashboard"></li>
+      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Fetch data" [link]="['/data']" icon="list"></li>
+      <li *ngIf="auth.isLoggedIn()" app-nav-item text="Dashboard" [link]="['/dashboard']" icon="dashboard"></li>
 
-      <!-- TODO: Rename #exampleAccordion -->
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+      <li *ngIf="auth.isLoggedIn()" class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#accordion">
           <i class="fa fa-fw fa-area-chart"></i>
           <span class="nav-link-text">Charts</span>
         </a>
@@ -42,7 +41,8 @@
 
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
+      <!-- TODO: Move to external component -->
+      <li *ngIf="auth.isLoggedIn()" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-fw fa-envelope"></i>
           <span class="d-lg-none">Messages
@@ -78,7 +78,7 @@
           <a class="dropdown-item small" href="#">View all messages</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
+      <li *ngIf="auth.isLoggedIn()" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-fw fa-bell"></i>
           <span class="d-lg-none">Alerts
@@ -121,7 +121,7 @@
           <a class="dropdown-item small" href="#">View all alerts</a>
         </div>
       </li>
-      <li class="nav-item">
+      <li *ngIf="auth.isLoggedIn()" class="nav-item">
         <form class="form-inline my-2 my-lg-0 mr-lg-2">
           <div class="input-group">
             <input class="form-control" type="text" placeholder="Search for...">
@@ -135,20 +135,20 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/login']">
+        <a *ngIf="!auth.isLoggedIn()" class="nav-link" [routerLink]="['/login']">
           <i class="fa fa-fw fa-sign-in"></i>Login
         </a>
-        
 
-        <a class="nav-link" data-toggle="modal" (click)="auth.logout()">
+
+        <a *ngIf="auth.isLoggedIn()" class="nav-link" data-toggle="modal" (click)="auth.logout()">
           <i class="fa fa-fw fa-sign-out"></i>Logout
         </a>
       </li>
 
-      <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']">
-              Register
-            </a>
+      <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link" [routerLink]="['/register']">
+          Register
+        </a>
       </li>
     </ul>
   </div>
