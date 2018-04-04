@@ -42,6 +42,7 @@ import { HttpModule } from '@angular/http';
 import { RegisterService } from './services/register.service';
 import { AlertService } from './services/alert.service';
 import { AuthGuard } from './guards/auth.guard';
+import { NonAuthGuard } from './guards/non-auth.guard';
 
 //import { ChartsModule } from 'ng2-charts';
 
@@ -81,7 +82,7 @@ import { AuthGuard } from './guards/auth.guard';
 
     //ChartsModule
   ],
-  providers: [ValuesService, AuthService, RegisterService, AlertService, AuthGuard],
+  providers: [ValuesService, AuthService, RegisterService, AlertService, AuthGuard, NonAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

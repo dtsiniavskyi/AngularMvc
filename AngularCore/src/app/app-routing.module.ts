@@ -12,20 +12,21 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NonAuthGuard } from './guards/non-auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  
+
   { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
   { path: 'data', component: DataComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'charts/morris-js', component: MorrisJsComponent, canActivate: [AuthGuard] },
   { path: 'charts/chart-js', component: ChartJsComponent, canActivate: [AuthGuard] },
 
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'login', component: LoginComponent, canActivate: [NonAuthGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [NonAuthGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [NonAuthGuard] },
 
   { path: '**', component: NotFoundComponent }
 ];
