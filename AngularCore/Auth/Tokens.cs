@@ -17,6 +17,7 @@ namespace AngularCore.Auth
             var response = new
             {
                 id = identity.Claims.Single(c => c.Type == "id").Value,
+                // TODO: Rename auth_token to token
                 auth_token = await jwtFactory.GenerateEncodedToken(userName, identity),
                 expires_in = (int)jwtOptions.ValidFor.TotalSeconds
             };
