@@ -18,6 +18,7 @@ export class AuthService {
     }
   }
 
+  // TODO: Add model classes, use typings!!!
   login(credentials) {
     // TODO: Rename inputs on component.html: UserName => email, Password => passwrod
     // or model propery names to make namings consistent

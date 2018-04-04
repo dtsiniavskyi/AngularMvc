@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   signIn(credentials) {
-    console.log(credentials);
+    console.log(credentials);   
 
     this.auth.login(credentials)
       .subscribe(result => {

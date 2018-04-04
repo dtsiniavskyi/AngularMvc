@@ -14,6 +14,7 @@ namespace AngularCore.Registration
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
 
+        // TODO: Rename to register controller?
         public RegistrationController(UserManager<ApplicationUser> userManager, IMapper mapper, ApplicationDbContext appDbContext)
         {
             _userManager = userManager;

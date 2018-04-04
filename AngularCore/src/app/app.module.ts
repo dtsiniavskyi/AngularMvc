@@ -39,6 +39,8 @@ import { AuthService } from './services/auth.service';
 // TODO: Deprecated, need to remove!!!
 import { HttpModule } from '@angular/http';
 
+import { RegisterService } from './services/register.service';
+
 //import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -77,7 +79,7 @@ import { HttpModule } from '@angular/http';
 
     //ChartsModule
   ],
-  providers: [ValuesService, AuthService],
+  providers: [ValuesService, AuthService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
