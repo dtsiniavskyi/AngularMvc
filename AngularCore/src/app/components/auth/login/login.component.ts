@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { AuthService } from '../../../services/auth.service';
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private alert: AlertService
   ) { }
 
   ngOnInit() { }
@@ -25,9 +27,9 @@ export class LoginComponent implements OnInit {
       .subscribe(result => {
         if (result)
           this.router.navigate(['/']);
-        else
-          // TODO: Implement some better error handling, add error component or directive
-          this.invalidLogin = true;
+        else          
+          // TODO: move string all literals to some kind of resources to avoid string hardcoding
+          this.alert.error("Invalid user name or password");
       });
   }
 }
