@@ -11,15 +11,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'counter', component: CounterComponent },
-  { path: 'data', component: DataComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'charts/morris-js', component: MorrisJsComponent },
-  { path: 'charts/chart-js', component: ChartJsComponent },
+  
+  { path: 'counter', component: CounterComponent, canActivate: [AuthGuard] },
+  { path: 'data', component: DataComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'charts/morris-js', component: MorrisJsComponent, canActivate: [AuthGuard] },
+  { path: 'charts/chart-js', component: ChartJsComponent, canActivate: [AuthGuard] },
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

@@ -56,20 +56,20 @@ export class AuthService {
     // This method automatically extracts and decodes the token from local storage ... probably ...
 
     // TODO: Refactor, make jwt hepler a field, do not recreate the instance
-    let jwtHelper = new JwtHelper();
-    let token = localStorage.getItem('token');
+    // let jwtHelper = new JwtHelper();
+    // let token = localStorage.getItem('token');
 
-    if(!token)
-      return false;
+    // if(!token)
+    //   return false;
 
-    let expirationDate = jwtHelper.getTokenExpirationDate(token);
-    let isExpired = jwtHelper.isTokenExpired(token);
+    // let expirationDate = jwtHelper.getTokenExpirationDate(token);
+    // let isExpired = jwtHelper.isTokenExpired(token);
 
-    console.log("Expiration", expirationDate);
-    console.log("isExpired", isExpired);
+    // console.log("Expiration", expirationDate);
+    // console.log("isExpired", isExpired);
 
-    //return tokenNotExpired('token');
-    return !isExpired;
+    return tokenNotExpired('token');
+    //return !isExpired;
   }
 
 }
