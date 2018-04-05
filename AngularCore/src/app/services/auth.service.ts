@@ -10,11 +10,8 @@ import { AlertService } from './alert.service';
 export class AuthService {
   currentUser: any;
 
-  constructor(
-    // TODO: Figure out convention, typescript private members naming
-    private _http: Http,
-    private alert: AlertService
-  ) {
+  // TODO: Figure out convention, typescript private members naming
+  constructor(private _http: Http) {
     let token = localStorage.getItem('token');
     if (token) {
       // TODO: Refactor, make jwt hepler a field, do not recreate the instance
@@ -45,8 +42,6 @@ export class AuthService {
 
           // TODO: Consider case when token isn't decoded!!!
           this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
-
-          this.alert.success('Sign In Successfull.');
 
           return true;
         }

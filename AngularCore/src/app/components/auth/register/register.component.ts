@@ -17,17 +17,19 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() { }
 
-  register(registreModel){
+  register(registreModel) {
     // TODO: Clean up all console.logs when they are no longer required
     console.log(registreModel);
 
-    this.reg.register(registreModel).subscribe(res => {
-      // TODO: Move string literals to some kind of resources
-      this.alert.success('Registration successful', 'Success');
-      this.router.navigate(['/login']);
-    },
-    error => {      
-      this.alert.error(error);
-    });
+    this.reg.register(registreModel)
+      .subscribe(
+        res => {
+          // TODO: Move string literals to some kind of resources
+          this.alert.success('Registration successful.', 'Success!');
+          this.router.navigate(['/login']);
+        },
+        error => {
+          this.alert.error('Registration Failed.', 'Error!');
+        });
   }
 }

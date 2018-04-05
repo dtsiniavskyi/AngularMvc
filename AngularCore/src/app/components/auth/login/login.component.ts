@@ -8,7 +8,7 @@ import { AuthService } from '../../../services/auth.service';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-  
+
   // TODO: Refactor, remove this flag
   invalidLogin: boolean;
 
@@ -21,15 +21,21 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   signIn(credentials) {
-    console.log(credentials);   
+    console.log(credentials);
 
     this.auth.login(credentials)
-      .subscribe(result => {
-        if (result)
-          this.router.navigate(['/']);
-        else          
-          // TODO: move string all literals to some kind of resources to avoid string hardcoding
-          this.alert.error("Invalid user name or password");
-      });
+      .subscribe(
+        result => {
+          if (result){
+            this.alert.success('Sign In Successfull.', 'Success!');
+            this.router.navigate(['/']);
+          }            
+          else
+            // TODO: move string all literals to some kind of resources to avoid string hardcoding
+            this.alert.error("Invalid user name or password");
+        },
+        error => {
+          this.alert.error('Error Signing In', 'Error!');
+        });
   }
 }

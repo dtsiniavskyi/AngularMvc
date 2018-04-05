@@ -19,14 +19,16 @@ export class AlertComponent implements OnInit {
   ngOnInit() {
     this.alertService.alerted.subscribe(alert => {
 
+      // TODO: If alert title is undefined set it accordingly to alert type.
+
       // Show alert
       this.isVisible = true;
       this.alert = alert;
 
-      // Hide alert after 3 seconds
+      // Hide alert after 2.5 seconds
       setTimeout(() => {
         this.isVisible = false;
-      }, 3000);
+      }, 2500);
     });
   }
 }
