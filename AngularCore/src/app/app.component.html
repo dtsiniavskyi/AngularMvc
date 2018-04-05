@@ -2,6 +2,8 @@
 
 <div class="content-wrapper" [ngClass]="{ 'no-wrapper-margin': !auth.isLoggedIn() }">
 
+    <app-alert></app-alert>
+
     <div class="container-fluid">
         <router-outlet></router-outlet>
     </div>

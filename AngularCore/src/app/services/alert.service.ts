@@ -21,11 +21,6 @@ export class AlertService {
   success(message: string, title?: string) {
     let alert = new Alert(message, title);
     this.successAlerted.emit(alert);
-
-    console.log("SUCCESS", message);
-
-    if (title)
-      console.log("TITLE", title);
   }
 
   warning(message: string, title?: string) {

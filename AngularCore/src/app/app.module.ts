@@ -42,6 +42,7 @@ import { RegisterService } from './services/register.service';
 import { AlertService } from './services/alert.service';
 import { AuthGuard } from './guards/auth.guard';
 import { NonAuthGuard } from './guards/non-auth.guard';
+import { AlertComponent } from './components/alert/alert.component';
 
 //import { ChartsModule } from 'ng2-charts';
 
@@ -67,7 +68,8 @@ import { NonAuthGuard } from './guards/non-auth.guard';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

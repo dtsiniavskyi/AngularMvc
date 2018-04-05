@@ -4,12 +4,17 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { tokenNotExpired, JwtHelper } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
+import { AlertService } from './alert.service';
 
 @Injectable()
 export class AuthService {
   currentUser: any;
 
-  constructor(private _http: Http) {
+  constructor(
+    // TODO: Figure out convention, typescript private members naming
+    private _http: Http,
+    private alert: AlertService
+  ) {
     let token = localStorage.getItem('token');
     if (token) {
       // TODO: Refactor, make jwt hepler a field, do not recreate the instance
@@ -37,7 +42,11 @@ export class AuthService {
 
           // TODO: Refactor, make jwt hepler a field, do not recreate the instance
           let jwt = new JwtHelper();
+
+          // TODO: Consider case when token isn't decoded!!!
           this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
+
+          this.alert.success('Sign In Successfull.');
 
           return true;
         }
