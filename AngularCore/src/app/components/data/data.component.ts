@@ -10,6 +10,9 @@ export class DataComponent implements OnInit {
 
   constructor(public _service: ValuesService) { }
 
+  //TODO: Add Base component with isLoaded property
+  //TODO: Add loading component  
+
   ngOnInit() {
     this._service.getValues().subscribe(values => {
       this.values = values;

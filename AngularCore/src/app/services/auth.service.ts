@@ -71,5 +71,4 @@ export class AuthService {
     return tokenNotExpired('token');
     //return !isExpired;
   }
-
 }
