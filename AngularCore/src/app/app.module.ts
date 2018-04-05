@@ -33,7 +33,6 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NotAuthorizedComponent } from './components/not-authorized/not-authorized.component';
 import { AuthService } from './services/auth.service';
 
 // TODO: Deprecated, need to remove!!!
@@ -68,8 +67,7 @@ import { NonAuthGuard } from './guards/non-auth.guard';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    NotFoundComponent,
-    NotAuthorizedComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
