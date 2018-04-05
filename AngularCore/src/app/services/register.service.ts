@@ -9,7 +9,7 @@ export class RegisterService {
   register(model) {
     // TODO: Add Base Api Service and move all api urls to constatnts
     let url = '/api/registration';
-    // TODO: Try to stringify argument
+    // TODO: Try to stringify model: let body = JSON.stringify(model);
     // TODO: Add model classes, use typings!!!
     let body = JSON.stringify({
       FirstName: model.FirstName,
@@ -22,7 +22,6 @@ export class RegisterService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.post(url, body, options)
-      .map(res => res.json());
+    return this._http.post(url, body, options);
   }
 }

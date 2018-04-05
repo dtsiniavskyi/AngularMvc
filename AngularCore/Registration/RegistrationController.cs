@@ -35,9 +35,8 @@ namespace AngularCore.Registration
 
             if (!result.Succeeded)
                 return new BadRequestObjectResult(ModelState.AddErrors(result));
-            
-            // TODO: Extract string literals to Resources
-            return new OkObjectResult("Account created");
+                                  
+            return Ok();
         }
     }
 }

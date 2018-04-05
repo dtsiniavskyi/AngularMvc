@@ -21,8 +21,9 @@ export class RegisterComponent implements OnInit {
     // TODO: Clean up all console.logs when they are no longer required
     console.log(registreModel);
 
-    this.reg.register(registreModel).subscribe(res => {      
-      this.alert.success(res);
+    this.reg.register(registreModel).subscribe(res => {
+      // TODO: Move string literals to some kind of resources
+      this.alert.success('Registration successful', 'Success');
       this.router.navigate(['/login']);
     },
     error => {      

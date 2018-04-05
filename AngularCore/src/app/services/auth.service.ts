@@ -22,12 +22,13 @@ export class AuthService {
   login(credentials) {
     // TODO: Rename inputs on component.html: UserName => email, Password => passwrod
     // or model propery names to make namings consistent
+    
+    // TODO: Would be nicer if urls was /api/login
     let url = '/api/auth/login';
     let body = JSON.stringify({ UserName: credentials.UserName, Password: credentials.Password });
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-
-    // TODO: Would be nicer if urls was /api/login
+    
     return this._http.post(url, body, options)
       .map(res => res.json())
       .map(res => {
