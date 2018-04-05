@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
           }            
           else
             // TODO: move string all literals to some kind of resources to avoid string hardcoding
-            this.alert.error("Invalid user name or password");
+            this.alert.error("Invalid user name or password", 'Error!');
         },
         error => {
-          this.alert.error('Error Signing In', 'Error!');
+          this.alert.error('Invalid user name or password', 'Error!');
         });
   }
 }

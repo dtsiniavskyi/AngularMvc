@@ -1,5 +1,5 @@
 <!-- TODO: Add fa icons -->
-<div *ngIf="isVisible" class="alert alert-{{alert.type}} mx-2">
+<div *ngIf="isVisible" class="animated alert alert-{{alert.type}} mx-2" [ngClass]="{'fadeIn':isVisible}">
   <!-- No need to use *ngIf on laert.title since it will not be visible anyway when title is empty -->
   <strong>{{alert.title}}</strong> {{alert.message}}
 </div>

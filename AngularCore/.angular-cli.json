@@ -23,7 +23,8 @@
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",        
         "../node_modules/morris.js/morris.css",
         "../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css",
-        "styles/sb-admin.min.css",        
+        "../node_modules/animate.css/animate.min.css",
+        "styles/sb-admin.min.css",
         "styles/main.css"
       ],
       
