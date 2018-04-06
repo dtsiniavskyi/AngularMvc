@@ -35,7 +35,7 @@ namespace AngularCore.Auth
                 return BadRequest(ModelState);
 
             var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
-            if (identity == null)            
+            if (identity == null)
                 return BadRequest(ModelState.AddError("login_failure", "Invalid username or password."));
             
             // TODO: jwt should be only one string

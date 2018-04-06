@@ -16,7 +16,7 @@ export class ValuesService {
     let token = localStorage.getItem('token');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Bearer ' + token);    
+    headers.append('Authorization', 'Bearer ' + token);
     let options = new RequestOptions({ headers: headers });
 
     // TODO: Investigate using newer versions of AuthHttp for HttpClient in Angular 5
