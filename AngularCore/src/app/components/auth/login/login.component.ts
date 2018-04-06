@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
         error => {
           this.alert.error("Invalid user name or password", 'Error!');
 
+          // TODO: Create Error Handler Service that will hanle errors from modelstate object
+          
           // let errors = error.json();
           // for(var i=0;i<errors.length; i++){
           //   let key = errors[i];
