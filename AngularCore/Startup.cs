@@ -18,7 +18,7 @@ using System.Text;
 
 namespace AngularCore
 {
-    // TODO: Try to make Startup partial and move all configure service methods there and just call here
+    // TODO: Try to make Startup partial and split all configure service operations into separate methods
     public class Startup
     {
         // TODO: Get this from somewhere secure, possibly configuration !!!
@@ -35,16 +35,15 @@ namespace AngularCore
 
         // This method gets called by the runtime.
         // Use this method to add services to the conteiner.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             #region Database
             // Add Database Context
-            // TODO: Extract to external extension method .AddApplicationDbContext()
+            // TODO: Extract to external extension method .AddDatabase()
             var connetctionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connetctionString,
-                b => b.MigrationsAssembly("AngularCore")));
+                options.UseSqlServer(connetctionString, b => b.MigrationsAssembly("AngularCore")));
+
             #endregion
 
             #region JWT
