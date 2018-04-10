@@ -43,7 +43,6 @@ namespace AngularCore
             var connetctionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connetctionString, b => b.MigrationsAssembly("AngularCore")));
-
             #endregion
 
             #region JWT
